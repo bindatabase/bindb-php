@@ -1,0 +1,30 @@
+{
+    "name": "riadloukili/bindb-php",
+    "description": "The PHP library for doing bin lookups, more information at https://bindb.me/docs/php",
+    "keywords": [
+        "bin",
+        "Bindb",
+        "Lookup"
+    ],
+    "homepage": "https://bindb.me",
+    "support": {
+        "issues": "https://github.com/riadloukili/bindb-php/issues",
+        "source": "https://github.com/riadloukili/bindb-php"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Riad Loukili",
+            "email": "riad.loukili@outlook.com",
+            "role": "Original Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Riad\\": "src/Riad/"
+        }
+    },
+    "require": {
+        "php": ">=5.6.0"
+    }
+}
