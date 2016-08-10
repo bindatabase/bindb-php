@@ -1,3 +1,5 @@
+Version: 0.1.0
+
 # What is this package for?
 
 Have you ever thought of knowing information such as: credit card level, issuer (bank) name,
