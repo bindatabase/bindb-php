@@ -57,7 +57,7 @@ class Bin
             $fields_query = rtrim($fields_query, ',');
         }
         $resource = is_null($this->app_token) ? 'public' : "private/{$this->app_token}";
-        $url = "http://bindb.dev/api/{$resource}/json/{$bin}{$fields_query}";
+        $url = "https://bindb.me/api/{$resource}/json/{$bin}{$fields_query}";
         $ch = curl_init();
         curl_setopt_array($ch, [
             CURLOPT_URL            => $url,
