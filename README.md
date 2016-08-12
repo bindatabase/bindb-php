@@ -1,4 +1,4 @@
-Version: 0.2.0
+[![Travis](https://img.shields.io/travis/bindatabase/bindb-php.svg?maxAge=2592000)]()
 
 # What is this package for?
 
