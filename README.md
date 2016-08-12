@@ -87,7 +87,7 @@ $response = $bin->get(437776);
 
 You can also use `::search(int|string $bin)` or `::lookup(int|string $bin)` which are aliases of `::get()`
 
-**NOTE**: If you want raw json response, you may use `::raw(int\string $bin)`.
+**NOTE**: If you want raw json response, you may use `::raw(int|string $bin)`.
 
 You may also get only the fields you need by specifying them with the method `::fields(array $fields)`.
 
