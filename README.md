@@ -1,4 +1,4 @@
-[![Travis](https://img.shields.io/travis/bindatabase/bindb-php.svg?maxAge=2592000)]()
+[![Travis](https://img.shields.io/travis/bindatabase/bindb-php.svg?maxAge=2592000)](https://travis-ci.org/bindatabase/bindb-php)
 
 # What is this package for?
 
