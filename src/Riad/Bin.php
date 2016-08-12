@@ -34,6 +34,9 @@ class Bin
      */
     public function __construct($app_token = null)
     {
+        if (!is_string($app_token) && !is_null($app_token))
+            throw new \InvalidArgumentException('App Token must be string, ' . gettype($app_token) . ' given.');
+
         $this->app_token = $app_token;
         return $this;
     }
@@ -54,7 +57,7 @@ class Bin
             $fields_query = rtrim($fields_query, ',');
         }
         $resource = is_null($this->app_token) ? 'public' : "private/{$this->app_token}";
-        $url = "http://bindb.dev/api/{$resource}/json/{$bin}{$fields_query}";
+        $url = "https://bindb.me/api/{$resource}/json/{$bin}{$fields_query}";
         $ch = curl_init();
         curl_setopt_array($ch, [
             CURLOPT_URL            => $url,
@@ -72,7 +75,7 @@ class Bin
      * Get a bin information.
      * @param int|string $bin The 6 digits bin number
      * @param bool $array Whether return an array to an object
-     * @return null|object Object of the response containing the information
+     * @return null|object|array The response containing the information
      * @throws \Exception
      */
     public function get($bin, $array = false)
@@ -96,7 +99,7 @@ class Bin
      * @alias get()
      * @param int|string $bin The 6 digits bin number
      * @param bool $array
-     * @return null|object Object of the response containing the information
+     * @return null|object|array The response containing the information
      * @throws \Exception
      */
     public function search($bin, $array = false)
@@ -109,7 +112,7 @@ class Bin
      * @alias get()
      * @param int|string $bin The 6 digits bin number
      * @param bool $array
-     * @return null|object Object of the response containing the information
+     * @return null|object|array The response containing the information
      * @throws \Exception
      */
     public function lookup($bin, $array = false)
