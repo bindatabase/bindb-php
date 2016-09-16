@@ -48,8 +48,6 @@ class BinTest extends PHPUnit_Framework_TestCase
     public function testGetWithValidBin ()
     {
         $this->assertEquals($this->expectedObj, $this->bin->get(437776));
-        $this->assertEquals($this->expectedObj, $this->bin->search(437776));
-        $this->assertEquals($this->expectedObj, $this->bin->lookup(437776));
     }
 
     public function testGetWithInvalidBin ()
@@ -75,10 +73,8 @@ class BinTest extends PHPUnit_Framework_TestCase
     {
         $result1 = $this->bin->query('SELECT * FROM bins WHERE bin = 437776')->run();
         $result2 = $this->bin->query('SELECT bin,issuer FROM bins WHERE bin = ?')->run(437776);
-        $result3 = $this->bin->query('SELECT bin,issuer FROM bins WHERE bin = ?')->run([437776]);
         $this->assertEquals($this->expectedObj, $result1);
         $this->assertEquals((object) [ 'bin' => 437776, 'issuer' => 'ATTIJARIWAFA BANK'], $result2);
-        $this->assertEquals((object) [ 'bin' => 437776, 'issuer' => 'ATTIJARIWAFA BANK'], $result3);
     }
 
     public function testQueryWithoutParam ()
